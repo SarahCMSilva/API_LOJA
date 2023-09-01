@@ -54,4 +54,16 @@ public class TabelaProdutos {
         this.produtos.add(novoProduto);
         return novoProduto;
     }
+    public void atualizarProduto(int produtoId,Produto produtoAtualizar){
+        Produto produtoProcurado = this.buscarProdutoPeloId(produtoId);
+        if (produtoProcurado !=null){
+            produtoProcurado.setNome(produtoAtualizar.getNome());
+            produtoProcurado.setDescricao(produtoAtualizar.getDescricao());
+            produtoProcurado.setValorUnitario(produtoAtualizar.getValorUnitario());
+        }
+    }
+    public void removerProduto(int produtoId){
+        Produto produtoRemover = this.buscarProdutoPeloId(produtoId);
+        this.produtos.remove(produtoRemover);
+    }
 }
